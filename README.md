@@ -1,4 +1,8 @@
-コトノハックのレポジトリになります。TwitterPageはBearerToken（専用鍵）の関係上レポジトリに乗せていません。レポジトリのlib>main.dartページのTwitterPageInterfaceを消去すればクローンすることが出来ます。TwitterPageのコードを見たい際は、メモ機能にて配布しますので、ツイッターまでご連絡下さい。
+コトノハックのレポジトリになります。TwitterPageはBearerToken（専用鍵）の関係上レポジトリに乗せていません。レポジトリのlib>main.dartページの
+
+ MaterialPageRoute(builder: (context)  => TwitterPageInterface()),　（８８行目）
+ 
+ TwitterPageInterfaceを消去すればクローンすることが出来ます。TwitterPageのコードを見たい際は、メモ機能にて配布しますので、ツイッターまでご連絡下さい。
 https://twitter.com/fki2g
 
 
