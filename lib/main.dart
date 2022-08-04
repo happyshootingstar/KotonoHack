@@ -69,7 +69,7 @@ class Home extends  StatelessWidget {
                   height:200,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image:AssetImage('assets/images/SD6おんぶ姉妹.png'),
+                        image:AssetImage('assets/images/SD2姉妹.png'),
                       fit: BoxFit.fitWidth,
                     )
                   ),
