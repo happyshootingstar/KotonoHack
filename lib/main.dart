@@ -154,19 +154,19 @@ class Home extends  StatelessWidget {
             ),
             Container(
               width: double.infinity,
-              height:200,
+              height:150,
               child: RaisedButton(
                 color: Colors.deepPurple[50],
                 child: Container(
                   width: double.infinity,
-                  height:200,
+                  height:150,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage('assets/images/SD5膝枕姉妹.png'),
-                        fit: BoxFit.fitWidth,
+                        fit: BoxFit.fitHeight,
                       )
                   ),
-                  child: Text('Goods Shoop',
+                  child: Text('Goods\nShoop',
                     style: TextStyle(
                       fontFamily: "Patrick_Hand",
                       color:Colors.black54,
