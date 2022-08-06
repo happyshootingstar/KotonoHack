@@ -25,7 +25,6 @@ class KotonohaMusicPage extends State <KotonohaMusic>{
   Future <void> fetchData()async {
     Response response = await Dio().get(
       "https://api.search.nicovideo.jp/api/v2/snapshot/video/contents/search?q=琴葉 茜 OR 葵 OR 姉妹　-ミク&targets=tags&fields=contentId,title,contentId,thumbnailUrl,viewCounter,genre&filters[viewCounter][gte]=200&filters[genre][0]=音楽・サウンド&_sort=-startTime&_offset=0&_limit=60&_context=Kotono Hack",
-
       options: Options(
           headers:<String, dynamic> {
             'User-Agent':'Kotono Hack',
@@ -46,6 +45,7 @@ class KotonohaMusicPage extends State <KotonohaMusic>{
   Widget build (BuildContext context){
     return Scaffold(
       appBar:AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.blue[50],
         centerTitle: true,
         title: Text(

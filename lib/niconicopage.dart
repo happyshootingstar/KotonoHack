@@ -45,6 +45,7 @@ class KotonohaMovie extends State <NicoNicoHome>{
   Widget build (BuildContext context){
     return Scaffold(
       appBar:AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.blue[50],
         centerTitle: true,
         title: Text(
