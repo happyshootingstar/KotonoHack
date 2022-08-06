@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'main.dart';
 
 class NicoNicoPage extends StatelessWidget {
   const NicoNicoPage({super.key});
@@ -54,9 +55,23 @@ class KotonohaMovie extends State <NicoNicoHome>{
             fontFamily: "Patrick_Hand",
           ),
         ) ,
+        actions: [
+          IconButton(
+              color: Colors.pink[200],
+          icon: Icon(Icons.home),
+          onPressed: () => {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Home()),
+              )
+            },
+          )
+        ],
       ),
       body: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            mainAxisSpacing: 5.0,
               crossAxisCount: 3,
               crossAxisSpacing: 4,
           ),

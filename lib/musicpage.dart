@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'main.dart';
 
 class MusicPage extends  StatelessWidget{
   const MusicPage({super.key});
@@ -55,6 +56,19 @@ class KotonohaMusicPage extends State <KotonohaMusic>{
             fontFamily: "Patrick_Hand",
           ),
         ) ,
+        actions: [
+          IconButton(
+            color: Colors.pink[200],
+            icon: Icon(Icons.home),
+            onPressed: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Home()),
+              )
+            },
+          )
+        ],
       ),
       body: ListView.builder(
         itemCount: dataList.length,
