@@ -1,15 +1,21 @@
-コトノハックのレポジトリになります。TwitterPageはBearerToken（専用鍵）の関係上レポジトリに乗せていません。レポジトリのlib>main.dartページの
 
- MaterialPageRoute(builder: (context)  => TwitterPageInterface()),　（８８行目）
- 
- TwitterPageInterfaceを消去すればクローンすることが出来ます。TwitterPageのコードを見たい際は、メモ機能にて配布しますので、ツイッターまでご連絡下さい。
-https://twitter.com/fki2g
 
 
 
 # kotonohack
+コトノハックのレポジトリになります。TwitterPageはBearerToken（専用鍵）の関係上レポジトリに乗せていません。レポジトリのlib>main.dartページの
 
-A new Flutter project.
+ MaterialPageRoute(builder: (context)  => TwitterPageInterface()),　（８８行目）
+ 
+ ここを
+ 
+ MaterialPageRoute(()),　
+ 
+ pubspecyamlにてpubgetコマンドを打ちクローンしてください。
+ 
+ TwitterPageのコードを見たい際は、メモ機能にて配布しますので、ツイッターまでご連絡下さい。
+https://twitter.com/fki2g
+
 
 ## Getting Started
 
