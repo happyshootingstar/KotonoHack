@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kotonohack/SearchPage.dart';
 import 'TermsPage.dart';
 
 class BookPage extends StatelessWidget{
@@ -50,6 +51,29 @@ class BookPageHome extends StatelessWidget {
                  Navigator.push(
                      context,
                      MaterialPageRoute(builder: (context)  => TermsPage()),
+                 );
+               },
+             ),
+           ),
+           Container(
+             width: double.infinity,
+             height: 70,
+             child: RaisedButton(
+               color:Colors.deepPurple[50],
+               child: Container(
+                 child: Text(
+                   'アプリの検索方法について',
+                   style: TextStyle(
+                     color: Colors.black87,
+                     fontSize: 20,
+                     letterSpacing: 1.0,
+                   ),
+                 ),
+               ),
+               onPressed: (){
+                 Navigator.push(
+                   context,
+                   MaterialPageRoute(builder: (context)  => SearchPage()),
                  );
                },
              ),

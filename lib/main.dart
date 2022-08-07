@@ -62,7 +62,7 @@ class Home extends  StatelessWidget {
             Container(
               width: double.infinity,
               height:200,
-              child: RaisedButton(
+              child: FlatButton(
                 color: Colors.deepPurple[50],
                 child: Container(
                   width: double.infinity,
@@ -71,7 +71,13 @@ class Home extends  StatelessWidget {
                     image: DecorationImage(
                         image:AssetImage('assets/images/SD6おんぶ姉妹.png'),
                       fit: BoxFit.fitWidth,
-                    )
+                    ),
+                    border: Border(
+                      bottom: BorderSide(
+                        width: 2,
+                        color: Colors.black12,
+                      ),
+                    ),
                   ),
                   child: Text('Twitter',
                     style: TextStyle(
@@ -93,7 +99,7 @@ class Home extends  StatelessWidget {
             Container(
               width: double.infinity,
               height:200,
-              child: RaisedButton(
+              child: FlatButton(
                 color: Colors.deepPurple[50],
                 child: Container(
                   width: double.infinity,
@@ -102,7 +108,13 @@ class Home extends  StatelessWidget {
                       image: DecorationImage(
                         image: AssetImage('assets/images/SD2姉妹.png'),
                         fit: BoxFit.fitWidth,
-                      )
+                      ),
+                    border: Border(
+                  bottom: BorderSide(
+                  width: 2,
+                    color: Colors.black12,
+                  ),
+                ),
                   ),
                   child: Text('Movie',
                     style: TextStyle(
@@ -124,7 +136,7 @@ class Home extends  StatelessWidget {
             Container(
               width: double.infinity,
               height:200,
-              child: RaisedButton(
+              child: FlatButton(
                 color: Colors.deepPurple[50],
                 child: Container(
                   width: double.infinity,
@@ -133,7 +145,13 @@ class Home extends  StatelessWidget {
                       image: DecorationImage(
                         image:AssetImage('assets/images/SD4座り姉妹.png'),
                         fit: BoxFit.fitWidth,
-                      )
+                      ),
+                    border: Border(
+                      bottom: BorderSide(
+                        width: 2,
+                        color: Colors.black12,
+                      ),
+                    ),
                   ),
                   child: Text('Music',
                     style: TextStyle(
@@ -155,7 +173,7 @@ class Home extends  StatelessWidget {
             Container(
               width: double.infinity,
               height:150,
-              child: RaisedButton(
+              child: FlatButton(
                 color: Colors.deepPurple[50],
                 child: Container(
                   width: double.infinity,
@@ -164,7 +182,13 @@ class Home extends  StatelessWidget {
                       image: DecorationImage(
                         image: AssetImage('assets/images/SD5膝枕姉妹.png'),
                         fit: BoxFit.fitHeight,
-                      )
+                      ),
+                    border: Border(
+                      bottom: BorderSide(
+                        width: 2,
+                        color: Colors.black12,
+                      ),
+                    ),
                   ),
                   child: Text('Goods\nShoop',
                     style: TextStyle(
