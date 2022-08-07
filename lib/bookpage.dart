@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kotonohack/SearchPage.dart';
 import 'TermsPage.dart';
+import 'main.dart';
 
 class BookPage extends StatelessWidget{
   const BookPage({super.key});
@@ -27,6 +28,19 @@ class BookPageHome extends StatelessWidget {
            fontFamily: "Patrick_Hand",
          ),
        ),
+       actions: [
+       IconButton(
+         color: Colors.pink[200],
+         icon: Icon(Icons.home),
+         onPressed: () => {
+         Navigator.push(
+           context,
+           MaterialPageRoute(
+               builder: (context) => Home()),
+           )
+         },
+       )
+       ]
      ),
      body: SingleChildScrollView(
        child: Column(
