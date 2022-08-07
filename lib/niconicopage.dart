@@ -52,7 +52,7 @@ class KotonohaMovie extends State <NicoNicoHome>{
           "Kotono Movie",
           style:TextStyle(
             color:Colors.pink[200],
-            letterSpacing: 1.0,
+            letterSpacing: 2.0,
             fontFamily: "Patrick_Hand",
           ),
         ) ,

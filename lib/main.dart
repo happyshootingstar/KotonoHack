@@ -38,7 +38,7 @@ class Home extends  StatelessWidget {
           "Kotono Hack",
           style:TextStyle(
             color:Colors.pink[200],
-            letterSpacing: 1.0,
+            letterSpacing: 2.0,
             fontFamily: "Patrick_Hand",
           ),
         ) ,
@@ -189,6 +189,10 @@ class Home extends  StatelessWidget {
               color: Colors.deepPurple[50],
               child: Text(
                   '画像は琴葉茜 琴葉葵 (c) AI Inc.',
+                style: TextStyle(
+                  fontSize: 10,
+                  letterSpacing: 3,
+                ),
               ),
             )
           ],
