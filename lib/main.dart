@@ -49,7 +49,8 @@ class Home extends  StatelessWidget {
             onPressed: () => {
               Navigator.push(
                   context,
-                MaterialPageRoute(builder: (context)  => BookPage()),
+                MaterialPageRoute(builder: (context)  => BookPage()
+                ),
               )
             },
           ),
@@ -113,8 +114,8 @@ class Home extends  StatelessWidget {
                   bottom: BorderSide(
                   width: 2,
                     color: Colors.black12,
-                  ),
-                ),
+                      ),
+                    ),
                   ),
                   child: Text('Movie',
                     style: TextStyle(

@@ -137,6 +137,17 @@ class SearchPage extends StatelessWidget {
                    ),
                  ],
                ),
+               padding: EdgeInsets.only(
+                 bottom: 3.0
+               ),
+               decoration: BoxDecoration(
+                 border: Border(
+                   bottom: BorderSide(
+                     color: Colors.lightBlueAccent,
+                     width: 3,
+                   ),
+                 ),
+               ),
              ),
            ],
        ),
