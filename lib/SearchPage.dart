@@ -68,7 +68,7 @@ class SearchPage extends StatelessWidget {
                      ),
                    ),
                    Text(
-                     'ニコニコ動画のジャンルタグ、タイトルに『琴葉』を含み、かつ『茜』または『葵』を含んだ再生回数200回以上の新着順の上位66件です。',
+                     'ニコニコ動画のタグ、タイトルに『琴葉』を含み、かつ『茜』または『葵』を含んだ再生回数200回以上の新着順の上位66件です。',
                      style: TextStyle(
                        fontSize: 18,
                        color: Colors.black87,
