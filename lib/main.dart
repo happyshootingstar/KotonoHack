@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      color: Colors.deepOrange[100],
+      // color: Colors.deepOrange[100],
       debugShowCheckedModeBanner: false,
       title: 'Kotono Hack',
       theme: ThemeData(

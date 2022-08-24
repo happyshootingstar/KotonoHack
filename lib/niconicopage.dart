@@ -24,7 +24,7 @@ class KotonohaMovie extends State <NicoNicoHome>{
   List dataList = [];
   Future<void> fetchData()async {
     Response response = await Dio().get(
-        "https://api.search.nicovideo.jp/api/v2/snapshot/video/contents/search?q=琴葉 茜 OR 葵 OR 姉妹 &targets=tags&fields=contentId,title,contentId,thumbnailUrl,viewCounter,genre&filters[viewCounter][gte]=200&_sort=-startTime&_offset=0&_limit=66&_context=Kotono Hack",
+        "https://api.search.nicovideo.jp/api/v2/snapshot/video/contents/search?q=琴葉 茜 OR 葵 OR 姉妹 &targets=tags&fields=contentId,title,contentId,thumbnailUrl,viewCounter,genre&filters[viewCounter][gte]=0&_sort=-startTime&_offset=0&_limit=66&_context=Kotono Hack",
     options: Options(
       headers:<String, dynamic> {
         'User-Agent':'Kotono Hack'
