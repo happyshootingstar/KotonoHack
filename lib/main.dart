@@ -70,7 +70,7 @@ class Home extends  StatelessWidget {
                   height:200,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image:AssetImage('assets/images/SD6おんぶ姉妹.png'),
+                        image:AssetImage('assets/images/twitterpng.png'),
                       fit: BoxFit.fitWidth,
                     ),
                     border: Border(
@@ -107,7 +107,7 @@ class Home extends  StatelessWidget {
                   height:250,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/images/SD2姉妹.png'),
+                        image: AssetImage('assets/images/movie.png'),
                         fit: BoxFit.fitWidth,
                       ),
                     border: Border(
@@ -181,8 +181,8 @@ class Home extends  StatelessWidget {
                   height:150,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/images/SD5膝枕姉妹.png'),
-                        fit: BoxFit.fitHeight,
+                        image: AssetImage('assets/images/SD3姉妹.png'),
+                        fit: BoxFit.fitWidth,
                       ),
                     border: Border(
                       bottom: BorderSide(
@@ -191,7 +191,7 @@ class Home extends  StatelessWidget {
                       ),
                     ),
                   ),
-                  child: Text('Goods\nShoop',
+                  child: Text('Shoop',
                     style: TextStyle(
                       fontFamily: "Patrick_Hand",
                       color:Colors.black54,
