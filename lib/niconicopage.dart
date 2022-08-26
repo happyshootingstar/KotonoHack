@@ -21,17 +21,20 @@ class NicoNicoHome extends StatefulWidget {
 }
 //API取得
 class KotonohaMovie extends State <NicoNicoHome>{
-  List dataList = [];
+  List<dynamic> dataList = [];
+  int offset = 0;
+  //offsetの定義
   Future<void> fetchData()async {
     Response response = await Dio().get(
-        "https://api.search.nicovideo.jp/api/v2/snapshot/video/contents/search?q=琴葉 茜 OR 葵 OR 姉妹 &targets=tags&fields=contentId,title,contentId,thumbnailUrl,viewCounter,genre&filters[viewCounter][gte]=0&_sort=-startTime&_offset=0&_limit=66&_context=Kotono Hack",
+        "https://api.search.nicovideo.jp/api/v2/snapshot/video/contents/search?q=琴葉 茜 OR 葵 OR 姉妹 &targets=tags&fields=contentId,title,contentId,thumbnailUrl,viewCounter,genre&filters[viewCounter][gte]=0&_sort=-startTime&_offset=" + offset.toString() + "&_limit=33&_context=Kotono Hack",
     options: Options(
       headers:<String, dynamic> {
         'User-Agent':'Kotono Hack'
         }
       ),
     );
-    dataList=response.data['data'];
+    // dataList=response.data['data'];
+    dataList.addAll(response.data['data']);
     setState(() {});
     //テスト print(dataList);
   }
@@ -59,7 +62,7 @@ class KotonohaMovie extends State <NicoNicoHome>{
         actions: [
           IconButton(
               color: Colors.pink[200],
-          icon: Icon(Icons.home),
+            icon: Icon(Icons.home),
           onPressed: () => {
                 Navigator.push(
                     context,
@@ -77,8 +80,9 @@ class KotonohaMovie extends State <NicoNicoHome>{
               crossAxisSpacing: 4,
           ),
           itemCount: dataList.length ,
-          itemBuilder: (context, index){
+          itemBuilder: (context, int index){
             Map<String, dynamic> data = dataList[index];
+            if(index != dataList.length -1){
             return InkWell(
               onTap: () async{
                 var url = 'https://nico.ms/'+data['contentId'];
@@ -95,7 +99,7 @@ class KotonohaMovie extends State <NicoNicoHome>{
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: new TextStyle(
-                      fontSize: 13,
+                      fontSize: 15,
                       color: Colors.pink[200],
                       fontWeight: FontWeight.bold,
                       ),
@@ -103,7 +107,27 @@ class KotonohaMovie extends State <NicoNicoHome>{
                   ],
                 )
             );
-          },
+          }
+          else{
+            return OutlinedButton(
+              child: Text(
+                'show more',
+                style: new TextStyle(
+                  fontSize: 13,
+                  color: Colors.blue[200],
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            onPressed: ()=> {
+              setState((){
+                offset += 30;
+                fetchData();
+                },
+              )
+            },
+          );
+        }
+      },
       ),
     );
   }

@@ -21,17 +21,20 @@ class KotonohaMusic extends StatefulWidget {
 }
 //API取得
 class KotonohaMusicPage extends State <KotonohaMusic>{
-  List dataList = [];
+  List<dynamic> dataList = [];
+  int offset = 0;
   Future <void> fetchData()async {
     Response response = await Dio().get(
-      "https://api.search.nicovideo.jp/api/v2/snapshot/video/contents/search?q=琴葉 茜 OR 葵 OR 姉妹　-ミク&targets=tags&fields=contentId,title,contentId,thumbnailUrl,viewCounter,genre&filters[viewCounter][gte]=0&filters[genre][0]=音楽・サウンド&_sort=-startTime&_offset=0&_limit=30&_context=Kotono Hack",
+      "https://api.search.nicovideo.jp/api/v2/snapshot/video/contents/search?q=琴葉 茜 OR 葵 OR 姉妹&targets=tags&fields=contentId,title,contentId,thumbnailUrl,viewCounter,genre&filters[viewCounter][gte]=0&filters[genre][0]=音楽・サウンド&_sort=-startTime&_offset=" + offset.toString() + "&_limit=30&_context=Kotono Hack",
       options: Options(
           headers:<String, dynamic> {
             'User-Agent':'Kotono Hack',
           }
       ),
     );
-    dataList = response.data['data'];
+    // if(dataList.length == 0) dataList = response.data['data'];
+    dataList.addAll(response.data['data']);
+
     setState((){});
     //テストprint(dataList);
   }
@@ -74,41 +77,64 @@ class KotonohaMusicPage extends State <KotonohaMusic>{
         itemCount: dataList.length,
         itemBuilder: (BuildContext context, int index){
           Map<String, dynamic> data = dataList[index];
-          return Card(
-            child: InkWell(
-                onTap: () async{
-                  var url = 'https://nico.ms/'+data['contentId'];
-                  if (await canLaunch(url)){
-                    await launch(url);
-                  }
-                },
-                child: Column(
-                  children:<Widget> [
-                    ListTile(
-                      leading:Container(
-                        width: 120,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
+          if(index != dataList.length - 1){
+            return Card(
+              child: InkWell(
+                  onTap: () async{
+                    var url = 'https://nico.ms/'+data['contentId'];
+                    if (await canLaunch(url)){
+                      await launch(url);
+                    }
+                  },
+                  child: Column(
+                    children:<Widget> [
+                      ListTile(
+                        leading:Container(
+                          width: 120,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
                               fit: BoxFit.fitWidth,
                               image: NetworkImage(data['thumbnailUrl']),
+                            ),
+                          ),
+                        ),
+                        title: Text(
+                          data['title'],
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: new TextStyle(
+                            fontSize: 13,
+                            color: Colors.pink[200],
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                      title: Text(
-                        data['title'],
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: new TextStyle(
-                          fontSize: 13,
-                          color: Colors.pink[200],
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
+                    ],
+                  )
+              ),
+            );
+          }else{
+            //リストの一番下に[more]ボタンを表示
+            return OutlinedButton(
+              child: Text(
+                'show more',
+                style: new TextStyle(
+                  fontSize: 13,
+                  color: Colors.blue[200],
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              onPressed: () => {
+                setState(() {
+                  //[more]ボタンが押されたら、30件増やしてデータを再取得(ver1.03)
+                  offset += 30;
+                  fetchData();
+                },
                 )
-            ),
-          );
+              },
+            );
+          }
+
         },
       ),
     );
