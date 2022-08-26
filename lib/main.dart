@@ -201,7 +201,7 @@ class Home extends  StatelessWidget {
                   ),
                 ),
                 onPressed: () async {
-                  String url = Uri.encodeFull("https://aivoice.thebase.in/items/40252950");
+                  String url = Uri.encodeFull("https://aivoice.thebase.in/categories/4382569");
                   if (await canLaunch(url)) {
                     await launch(url);
                   }
