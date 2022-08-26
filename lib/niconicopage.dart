@@ -120,7 +120,7 @@ class KotonohaMovie extends State <NicoNicoHome>{
               ),
             onPressed: ()=> {
               setState((){
-                offset += 30;
+                offset += 33;
                 fetchData();
                 },
               )
