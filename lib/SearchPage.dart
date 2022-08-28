@@ -68,7 +68,7 @@ class SearchPage extends StatelessWidget {
                      ),
                    ),
                    Text(
-                     'ニコニコ動画のタグ、タイトルに『琴葉』を含み、かつ『茜』または『葵』を含んだ再生回数200回以上の新着順の上位66件です。',
+                     'ニコニコ動画のタグ、タイトルに『琴葉』を含み、かつ『茜』または『葵』を含んだ新着順です(情報更新は１日１回）。',
                      style: TextStyle(
                        fontSize: 18,
                        color: Colors.black87,
@@ -100,7 +100,7 @@ class SearchPage extends StatelessWidget {
                      ),
                    ),
                    Text(
-                     'ニコニコ動画のジャンルタグ、タイトルに『琴葉』を含み、かつ『茜』または『葵』を含んだジャンル『音楽・サウンド』の再生回数200回以上の新着順上位60件です。',
+                     'ニコニコ動画のタグ、タイトルに『琴葉』を含み、かつ『茜』または『葵』を含んだジャンル『音楽・サウンド』の新着順です\n(情報更新は１日１回）。',
                      style: TextStyle(
                        fontSize: 18,
                        color: Colors.black87,
@@ -129,7 +129,7 @@ class SearchPage extends StatelessWidget {
                      ),
                    ),
                    Text(
-                     '株式会社エーアイ 様の公式ショップのURLにに繋がっています。\n  (https://aivoice.thebase.in/items/40252950)',
+                     '株式会社エーアイ 様の公式ショップのURLにに繋がっています。 (https://aivoice.thebase.in/categories/4382569)',
                      style: TextStyle(
                        fontSize: 18,
                        color: Colors.black87,
