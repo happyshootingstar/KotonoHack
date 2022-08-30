@@ -122,7 +122,7 @@ class SearchPage extends StatelessWidget {
                child: Column(
                  children: [
                    Text(
-                     'Goods Shoop',
+                     'Shop',
                      style: TextStyle(
                        fontSize: 40,
                        color: Colors.black87,

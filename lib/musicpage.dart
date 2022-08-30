@@ -24,6 +24,7 @@ class KotonohaMusicPage extends State <KotonohaMusic>{
   List<dynamic> dataList = [];
   int offset = 0;
   Future <void> fetchData()async {
+    try{
     Response response = await Dio().get(
       "https://api.search.nicovideo.jp/api/v2/snapshot/video/contents/search?q=琴葉 茜 OR 葵 OR 姉妹&targets=tags&fields=contentId,title,contentId,thumbnailUrl,viewCounter,genre&filters[viewCounter][gte]=0&filters[genre][0]=音楽・サウンド&_sort=-startTime&_offset=" + offset.toString() + "&_limit=30&_context=Kotono Hack",
       options: Options(
@@ -33,11 +34,31 @@ class KotonohaMusicPage extends State <KotonohaMusic>{
       ),
     );
     // if(dataList.length == 0) dataList = response.data['data'];
-    dataList.addAll(response.data['data']);
-
-    setState((){});
-    //テストprint(dataList);
+    if(response == null){
+      showAlertDialog();
+    }else {
+      dataList.addAll(response.data['data']);
+      if(dataList.length==0){
+        //レスポンスは返ってきたがデータが取得できないときはダイアログ表示
+        showAlertDialog();
+      }
+    }
+  }catch(e){
+  //レスポンスが返ってこないときなど、例外が発生したらダイアログを表示
+  showAlertDialog();
   }
+
+  setState(() {});
+//テスト print(dataList);
+}
+  void showAlertDialog(){
+    showDialog<void>(
+        context: context,
+        builder: (_) {
+          return AlertDialogSample();
+        });
+  }
+
   @override
   void initState(){
     super.initState();
@@ -136,6 +157,28 @@ class KotonohaMusicPage extends State <KotonohaMusic>{
           }
         },
       ),
+    );
+  }
+}
+class AlertDialogSample extends StatelessWidget {
+  const AlertDialogSample({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text('データ取得エラー'),
+      content: Text('5分以上間隔を開けてからリトライしてください。'),
+      actions: <Widget>[
+        FlatButton(
+          child: Text("OK",
+            style: new TextStyle(
+              color: Colors.pink[200],
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ],
     );
   }
 }

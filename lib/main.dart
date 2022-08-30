@@ -191,7 +191,7 @@ class Home extends  StatelessWidget {
                       ),
                     ),
                   ),
-                  child: Text('Shoop',
+                  child: Text('Shop',
                     style: TextStyle(
                       fontFamily: "Patrick_Hand",
                       color:Colors.black54,
