@@ -5,6 +5,7 @@ import 'package:kotonohack/niconicopage.dart';
 import 'package:kotonohack/twitter_page.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'bookpage.dart';
+import 'cookingPage.dart';
 
 void main() => runApp(const MyApp());
 class MyApp extends StatelessWidget {
@@ -143,10 +144,10 @@ class Home extends  StatelessWidget {
                   width: double.infinity,
                   height:200,
                   decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image:AssetImage('assets/images/SD4座り姉妹.png'),
-                        fit: BoxFit.fitWidth,
-                      ),
+                    image: DecorationImage(
+                      image:AssetImage('assets/images/SD4座り姉妹.png'),
+                      fit: BoxFit.fitWidth,
+                    ),
                     border: Border(
                       bottom: BorderSide(
                         width: 2,
@@ -167,6 +168,43 @@ class Home extends  StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context)  => MusicPage()),
+                  );
+                },
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height:200,
+              child: FlatButton(
+                color: Colors.deepPurple[50],
+                child: Container(
+                  width: double.infinity,
+                  height:200,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image:AssetImage('assets/images/SDアイコン茜葵正面.png'),
+                      fit: BoxFit.fitWidth,
+                    ),
+                    border: Border(
+                      bottom: BorderSide(
+                        width: 2,
+                        color: Colors.black12,
+                      ),
+                    ),
+                  ),
+                  child: Text('cooking',
+                    style: TextStyle(
+                      fontFamily: "Patrick_Hand",
+                      color:Colors.black54,
+                      fontSize: 50,
+                      letterSpacing: 1.0,
+                    ),
+                  ),
+                ),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)  => cookingPage()),
                   );
                 },
               ),
@@ -208,6 +246,7 @@ class Home extends  StatelessWidget {
                 },
               ),
             ),
+
             Container(
               width: double.infinity,
               height: 30,
